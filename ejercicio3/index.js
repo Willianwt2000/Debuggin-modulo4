@@ -28,6 +28,12 @@ function extractWords(line) {
     return values;
 }
 function validateData(values) {
+    // Validación de tipos de datos
+    if (typeof values[0] !== "string" ||
+        typeof values[2] !== "string" ||
+        typeof values[3] !== "string") {
+        return { isValid: false, errorMessage: "Invalid data types in row." };
+    }
     if (values.length !== 4) {
         return { isValid: false, errorMessage: "Length of row must be 4." };
     }
@@ -41,11 +47,12 @@ function validateData(values) {
         return { isValid: false, errorMessage: "Age is invalid." };
     }
     //Profesion
-    if (values[2].replace(/\s+/, "").length === 0) {
+    if (values[2].trim().length === 0) {
         return { isValid: false, errorMessage: "Profession is required." };
     }
     //Genero
-    if (!["male", "female"].includes(values[3].toLowerCase())) {
+    var gender = values[3].toLowerCase();
+    if (!["male", "female"].includes(gender)) {
         return { isValid: false, errorMessage: "Gender is invalid." };
     }
     return { isValid: true };
@@ -69,7 +76,7 @@ function parseCSV(filePath, hasHeader) {
         else {
             console.error("Invalid data, stopping program.");
             console.error(line);
-            console.error("Line ".concat(lineNumber, ": ").concat(validation.errorMessage));
+            console.error("Line ".concat(lineNumber, ": ").concat(validation));
             process.exit(-1);
         }
     }
