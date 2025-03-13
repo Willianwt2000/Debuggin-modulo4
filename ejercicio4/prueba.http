@@ -1,0 +1,35 @@
+
+###
+GET    http://localhost:8099/items/all
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "list": ["Arroz", "Jugo natural"]
+}
+###
+POST   http://localhost:8099/items/3
+Content-Type: application/json
+
+{
+  "name": "Raul",
+  "list": ["Bocina", "Cover"]
+}
+
+###
+PATCH    http://localhost:8099/items/1
+Content-Type: application/json
+
+{
+  "name": "Juana",
+  "list": ["Arroz", "Jugo de limon"]
+}
+
+###
+DELETE   http://localhost:8099/items/5
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "list": ["Arroz", "Jugo natural"]
+}
