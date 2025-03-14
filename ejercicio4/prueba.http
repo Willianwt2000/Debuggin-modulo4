@@ -7,26 +7,28 @@ Content-Type: application/json
   "name": "Maria",
   "list": ["Arroz", "Jugo natural"]
 }
+
+
 ###
-POST   http://localhost:8099/items/3
+POST   http://localhost:8099/items/hola
 Content-Type: application/json
 
 {
-  "name": "Raul",
-  "list": ["Bocina", "Cover"]
+  "name": "carlos",
+  "list": ["hola", "Cover"]
 }
 
 ###
-PATCH    http://localhost:8099/items/1
+PATCH    http://localhost:8099/items/2
 Content-Type: application/json
 
 {
-  "name": "Juana",
+  "name": "Jamsel",
   "list": ["Arroz", "Jugo de limon"]
 }
 
 ###
-DELETE   http://localhost:8099/items/5
+DELETE   http://localhost:8099/items/2
 Content-Type: application/json
 
 {
